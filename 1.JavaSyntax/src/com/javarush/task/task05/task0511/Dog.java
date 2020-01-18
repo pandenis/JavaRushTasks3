@@ -23,6 +23,7 @@ public class Dog {
         this.name = name;
         this.height = height;
         this.color = color;
+
     }
     public static void main(String[] args) {
 
