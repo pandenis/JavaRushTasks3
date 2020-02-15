@@ -3,7 +3,7 @@ package com.javarush.task.task09.task0930;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collection;
+
 import java.util.Collections;
 
 /* 
@@ -54,11 +54,30 @@ public class Solution {
             String second = strings.get(j);
 
             if (isGreaterThan(second, first));
-            strings.set(i, second);
-            strings.set(j, first);
+                {
+                    strings.set(i, second);
+                    strings.set(j, first);
+                }
         }
 
         Collections.sort(integers, Collections.reverseOrder());
+
+        int s = 0;
+        int n = 0;
+
+        for (int i = 0; i < wOrN.length; i++) {
+            if (wOrN[i].equals("s")) {
+                array[i] = strings.get(s);
+                s ++;
+            } else {
+                String x = String.valueOf(integers.get(n));
+                array[i] = x;
+            }
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(i);
+        }
 
 
     }
