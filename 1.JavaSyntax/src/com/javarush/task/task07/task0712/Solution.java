@@ -17,59 +17,38 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         for (int i = 0; i < 10; i++) {
-            String s = reader.readLine();
-            strings.add(s);
+            strings.add(reader.readLine());
         }
 
-        int shortestString = strings.get(0).length();
-        int longestString = strings.get(0).length();
-
-        for (int i = 1; i < strings.size(); i++) {
-            int temp = strings.get(i).length();
-            if (temp < shortestString) {
-                shortestString = temp;
-            }
-        }
-
- //       System.out.println("shortestString: " + shortestString);
+        int shortestSize = strings.get(0).length();
+        int longestSize  = strings.get(0).length();
 
         int indexOfShortest = 0;
-
-        for (int i = 0; i < strings.size(); i++) {
-             if (strings.get(i).length() == shortestString) {
-                indexOfShortest = i;
-                break;
-            }
-        }
-
- //       System.out.println("indexOfShortest: " + indexOfShortest);
-
-
-        for (int i = 1; i < strings.size(); i++) {
-            int temp = strings.get(i).length();
-            if (temp > longestString) {
-                longestString = temp;
-            }
-        }
-
- //       System.out.println("longestString: " + longestString);
-
         int indexOfLongest = 0;
 
         for (int i = 0; i < strings.size(); i++) {
-             if (strings.get(i).length() == longestString) {
+            int currentElementSize = strings.get(i).length();
+            if (shortestSize > currentElementSize) {
+                shortestSize = currentElementSize;
+                indexOfShortest = i;
+            }
+
+            if (longestSize < currentElementSize) {
+                longestSize = currentElementSize;
                 indexOfLongest = i;
-                break;
             }
         }
 
-  //      System.out.println("indexOfLongest: " + indexOfLongest);
-
+        String string;
 
         if (indexOfLongest < indexOfShortest) {
-            System.out.println(strings.get(indexOfLongest));
+            string = strings.get(indexOfLongest);
         } else {
-            System.out.println(strings.get(indexOfShortest));
+            string = strings.get(indexOfShortest);
         }
+
+        System.out.println(string);
+
+
     }
 }

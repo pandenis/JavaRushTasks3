@@ -21,18 +21,19 @@ public class Solution {
 
     public static ArrayList<String> fix(ArrayList<String> strings) {
         //напишите тут ваш код
-        ArrayList<String> list = strings;
-        for (int i = 0; i < list.size();) {
-            String string = list.get(i);
-            if ((string.contains("р"))&& (!string.contains("л"))) {
-                list.remove(i);
+
+        for (int i = 0; i < strings.size();) {
+            String s = strings.get(i);
+            if (s.contains("р") && !s.contains("л")) {
+                strings.remove(s);
+            } else if (s.contains("л") && !s.contains("р")) {
+                int n = ++i;
+                strings.add(n, s);
+                i++;
+            } else {
+                i++;
             }
-            else if (string.contains("л") && (!string.contains("р"))) {
-                list.add(i, string);
-                i+=2;
-            }
-            else i++;
         }
-        return list;
+        return strings;
     }
 }

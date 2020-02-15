@@ -5,7 +5,7 @@ int plus(int a, int b) – возвращает сумму чисел a и b
 int minus(int a, int b) – возвращает разницу чисел a и b
 int multiply(int a, int b) – возвращает результат умножения числа a на число b
 double division(int a, int b) – возвращает результат деления числа a на число b
-double percent(int a, int b) – возвращает b процентов от числа a
+double percent(int a, int b) – возвращает b процентов от числа a (например, percent(4, 50) должен вернуть 50% от 4)
 
 
 Требования:

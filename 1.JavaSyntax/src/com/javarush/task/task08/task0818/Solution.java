@@ -1,6 +1,7 @@
 package com.javarush.task.task08.task0818;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 /* 
@@ -10,28 +11,29 @@ import java.util.Map;
 public class Solution {
     public static Map<String, Integer> createMap() {
         //напишите тут ваш код
-        Map<String, Integer> map = new HashMap<>();
-        map.put("SurName1", 200);
-        map.put("SurName2", 300);
-        map.put("SurName3", 500);
-        map.put("SurName4", 700);
-        map.put("SurName5", 400);
-        map.put("SurName6", 900);
-        map.put("SurName7", 2100);
-        map.put("SurName8", 400);
-        map.put("SurName9", 500);
-        map.put("SurName0", 2300);
+        Map<String, Integer> list = new HashMap<>();
+        list.put("Family1", 10000);
+        list.put("Family2", 1000);
+        list.put("Family3", 5000);
+        list.put("Family4", 1004);
+        list.put("Family5", 499);
+        list.put("Family6", 1056);
+        list.put("Family7", 800);
+        list.put("Family8", 1056);
+        list.put("Family9", 100);
+        list.put("Family10", 1003);
 
-        return map;
+        return list;
     }
 
     public static void removeItemFromMap(Map<String, Integer> map) {
         //напишите тут ваш код
-        Map<String, Integer> copy = new HashMap<>(map);
+        Iterator<Map.Entry<String, Integer>> iterator = map.entrySet().iterator();
 
-        for (Map.Entry<String, Integer> pair : copy.entrySet()) {
-            if (pair.getValue() < 500) {
-                map.remove(pair.getKey());
+        while (iterator.hasNext()) {
+            Integer integer = iterator.next().getValue();
+            if (integer < 500) {
+                iterator.remove();
             }
         }
     }

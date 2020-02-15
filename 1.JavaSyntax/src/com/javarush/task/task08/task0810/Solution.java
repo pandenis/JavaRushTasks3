@@ -24,13 +24,14 @@ public class Solution {
 
     public static long getGetTimeInMs(List list) {
         // напишите тут ваш код
-        Date startDate = new Date();
+        Date before = new Date();
 
         get10000(list);
 
-        Date finishDate = new Date();
+        Date after = new Date();
+
         // напишите тут ваш код
-        return finishDate.getTime() - startDate.getTime();
+        return after.getTime() - before.getTime();
 
     }
 

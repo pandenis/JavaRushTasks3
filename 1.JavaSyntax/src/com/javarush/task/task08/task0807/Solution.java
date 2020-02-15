@@ -10,15 +10,15 @@ LinkedList и ArrayList
 public class Solution {
     public static Object createArrayList() {
         //напишите тут ваш код
-        ArrayList<String> strings = new ArrayList<>();
-        return strings;
+        ArrayList<Object> arrayList = new ArrayList<>();
+        return arrayList;
 
     }
 
     public static Object createLinkedList() {
         //напишите тут ваш код
-        LinkedList<Integer> integerLinkedList = new LinkedList<>();
-        return integerLinkedList;
+        LinkedList<Object> linkedList = new LinkedList<>();
+        return linkedList;
 
     }
 

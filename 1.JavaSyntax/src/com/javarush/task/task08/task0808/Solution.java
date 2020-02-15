@@ -28,14 +28,15 @@ public class Solution {
     public static void insert10000(List list) {
         //напишите тут ваш код
         for (int i = 0; i < 10000; i++) {
-            list.add(i, list);
+            list.add(i, new Object());
         }
+
 
     }
 
     public static void get10000(List list) {
         //напишите тут ваш код
-        for (int i = 0; i < 10000 ; i++) {
+        for (int i = 0; i < 10000; i++) {
             list.get(i);
         }
 
@@ -44,15 +45,15 @@ public class Solution {
     public static void set10000(List list) {
         //напишите тут ваш код
         for (int i = 0; i < 10000; i++) {
-            list.set(i, list);
+            list.set(i, new Object());
         }
 
     }
 
     public static void remove10000(List list) {
         //напишите тут ваш код
-        for (int i = 0; i < 10000; i++) {
-            list.remove(0);
+        for (int i = list.size() - 1; i >= 0; i--) {
+            list.remove(i);
         }
 
     }

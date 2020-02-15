@@ -20,7 +20,6 @@ public class StringHelper {
         for (int i = 0; i < count; i++) {
             result = result + s;
         }
-
         return result;
     }
 

@@ -11,23 +11,25 @@ import java.util.ArrayList;
 public class Solution {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-        ArrayList<String> strings = new ArrayList<>();
+        ArrayList<String> arrayList = new ArrayList<>(5);
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         for (int i = 0; i < 5; i++) {
-            String s = reader.readLine();
-            strings.add(s);
+            arrayList.add(reader.readLine());
         }
 
         for (int i = 0; i < 13; i++) {
-            String temp = strings.get(4);
-            strings.remove(4);
-            strings.add(0, temp);
+
+            arrayList.add(0, arrayList.remove(4));
+            /*String string = arrayList.get(index);
+            arrayList.remove(index);
+            index--;
+            arrayList.set(0, string);*/
         }
 
-        for (int i = 0; i < strings.size(); i++) {
-            System.out.println(strings.get(i));
+        for (int i = 0; i < arrayList.size(); i++) {
+            System.out.println(arrayList.get(i));
         }
     }
 }

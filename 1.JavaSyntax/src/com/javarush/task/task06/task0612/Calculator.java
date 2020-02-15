@@ -17,7 +17,7 @@ public class Calculator {
 
     public static int multiply(int a, int b) {
         //напишите тут ваш код
-        return  a * b;
+        return a * b;
     }
 
     public static double division(int a, int b) {
@@ -27,7 +27,7 @@ public class Calculator {
 
     public static double percent(int a, int b) {
         //напишите тут ваш код
-        return (double) a / 100 * (double) b ;
+        return (double) b / 100 * (double) a;
     }
 
     public static void main(String[] args) {

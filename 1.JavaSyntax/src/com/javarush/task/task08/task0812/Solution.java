@@ -12,38 +12,48 @@ Cамая длинная последовательность
 public class Solution {
     public static void main(String[] args) throws IOException {
         //напишите тут ваш код
-        List<Integer> arrayList = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        List<Integer> integers = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            arrayList.add(Integer.parseInt(reader.readLine()));
+            integers.add(reader());
         }
 
-        List<Integer> sortedArrayList = new ArrayList<>();
-        int countOfLength = 1;
-        for (int i = 0; i < arrayList.size() - 1; i++) {
+        System.out.println(chain(integers));
 
-            Integer first = arrayList.get(i);
-            int n = i + 1;
-            Integer second = arrayList.get(n);
-            if (first.equals(second)) {
-                countOfLength++;
-            } else if (!first.equals(second)){
-                    sortedArrayList.add(countOfLength);
-                    countOfLength = 1;
-                                }
-            sortedArrayList.add(countOfLength);
+    }
+
+    public static Integer reader() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        return Integer.parseInt(reader.readLine());
+    }
+
+    public static int chain(List<Integer> arrayList) {
+        int firstChainLength = 1;
+        int longestChainLength = 1;
+        int secondElement = 1;
+        int firstElement = 0;
+
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (i < arrayList.size() - 1) {
+                firstElement = arrayList.get(i);
+            }
+            int j = i + 1;
+            if (j == arrayList.size()) {
+                break;
+            }
+            secondElement = arrayList.get(j);
+
+
+
+
+            if (firstElement == secondElement) {
+                firstChainLength++;
+                if (firstChainLength > longestChainLength) {
+                    longestChainLength = firstChainLength;
+                }
+            } else firstChainLength = 1;
         }
-        int max = sortedArrayList.get(0);
 
-        for (int i = 0; i < sortedArrayList.size(); i++) {
-            if (sortedArrayList.get(i) > max)
-                max = sortedArrayList.get(i);
-        }
-
-        System.out.println(max);
-
-
-
+        return longestChainLength;
     }
 }

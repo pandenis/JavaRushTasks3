@@ -11,13 +11,12 @@ import java.util.ArrayList;
 public class Solution {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
-        ArrayList<String> strings = new ArrayList<>();
+        ArrayList<String> strings = new ArrayList<String>(10);
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         for (int i = 0; i < 10; i++) {
-            String s = reader.readLine();
-            strings.add(0, s);
+            strings.add(0, reader.readLine());
         }
 
         for (int i = 0; i < strings.size(); i++) {

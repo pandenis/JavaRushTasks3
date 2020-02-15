@@ -11,13 +11,13 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         InputStream fileInputStream;
-        String sourceFileName = reader.readLine();
         try {
-
+            String sourceFileName = reader.readLine();
             fileInputStream = getInputStream(sourceFileName);
-        } catch (IOException e) {
+        }
+        catch (Exception e){
             System.out.println("Файл не существует.");
-            sourceFileName = reader.readLine();
+            String sourceFileName = reader.readLine();
             fileInputStream = getInputStream(sourceFileName);
         }
 
@@ -34,6 +34,7 @@ public class Solution {
     }
 
     public static InputStream getInputStream(String fileName) throws IOException {
+
         return new FileInputStream(fileName);
     }
 

@@ -14,8 +14,10 @@ public class Solution {
         ArrayList<String> list = new ArrayList<>();
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
         for (int i = 0; i < 10; i++) {
-            list.add(reader.readLine());
+            String s = reader.readLine();
+            list.add(s);
         }
 
         ArrayList<String> result = doubleValues(list);
@@ -28,11 +30,10 @@ public class Solution {
 
     public static ArrayList<String> doubleValues(ArrayList<String> list) {
         //напишите тут ваш код
-        for (int i = 0; i < list.size(); ) {
+        for (int i = 0; i < list.size(); i++) {
             String s = list.get(i);
-            int n = i++;
-            list.add(n, s);
             i++;
+            list.add(i, s);
         }
         return list;
     }

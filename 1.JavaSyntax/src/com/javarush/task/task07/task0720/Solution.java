@@ -14,22 +14,23 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         //напишите тут ваш код
-        ArrayList<String> strings = new ArrayList<>();
         int n = Integer.parseInt(reader.readLine());
         int m = Integer.parseInt(reader.readLine());
+
+        ArrayList<String> strings = new ArrayList<>();
 
         for (int i = 0; i < n; i++) {
             strings.add(reader.readLine());
         }
 
         for (int i = 0; i < m; i++) {
-            strings.add(strings.get(0));
-            strings.remove(strings.get(0));
+            String string = strings.get(0);
+            strings.remove(0);
+            strings.add(string);
         }
 
         for (String s : strings) {
             System.out.println(s);
         }
-
     }
 }

@@ -1,6 +1,7 @@
 package com.javarush.task.task08.task0815;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 /* 
@@ -11,16 +12,17 @@ public class Solution {
     public static Map<String, String> createMap() {
         //напишите тут ваш код
         Map<String, String> stringMap = new HashMap<>();
-        stringMap.put("Family1", "Name1");
-        stringMap.put("Family2", "Name5");
-        stringMap.put("Family3", "Name6");
-        stringMap.put("Family4", "Name1");
-        stringMap.put("Family5", "Name4");
-        stringMap.put("Family6", "Name1");
-        stringMap.put("Family7", "Name7");
-        stringMap.put("Family8", "Name5");
-        stringMap.put("Family9", "Name1");
-        stringMap.put("Family10", "Name7");
+
+        stringMap.put("Tom", "Smith");
+        stringMap.put("Dave", "Cat");
+        stringMap.put("Bob", "Smith");
+        stringMap.put("Sem", "Cat");
+        stringMap.put("Ad", "Jar");
+        stringMap.put("Ed", "Moon");
+        stringMap.put("Jam", "Moon");
+        stringMap.put("Jan", "Son");
+        stringMap.put("Nickl", "Black");
+        stringMap.put("Hava", "Black");
 
         return stringMap;
 
@@ -28,25 +30,36 @@ public class Solution {
 
     public static int getCountTheSameFirstName(Map<String, String> map, String name) {
         //напишите тут ваш код
-        int nameCounter = 0;
-        for (String entry : map.values()) {
-            if (entry.equals(name)) {
-                nameCounter++;
+        int counter = 0;
+
+        Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
+
+        while (iterator.hasNext()) {
+
+            String valueName = iterator.next().getValue();
+            if (valueName.equals(name)) {
+                counter++;
             }
         }
-        return nameCounter;
+
+        return counter;
     }
 
     public static int getCountTheSameLastName(Map<String, String> map, String lastName) {
         //напишите тут ваш код
-        int lastNameCounter = 0;
-        for (String entry : map.keySet()) {
-            if (entry.equals(lastName)) {
-                lastNameCounter++;
+        int counter = 0;
+
+        Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
+
+        while (iterator.hasNext()) {
+
+            String valueLastName = iterator.next().getKey();
+            if (valueLastName.equals(lastName)) {
+                counter++;
             }
         }
-        return lastNameCounter;
 
+        return counter;
     }
 
     public static void main(String[] args) {

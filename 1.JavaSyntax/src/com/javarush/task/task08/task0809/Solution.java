@@ -17,12 +17,15 @@ public class Solution {
 
     public static long getInsertTimeInMs(List list) {
         // напишите тут ваш код
-        Date startTime = new Date();
-        insert10000(list);
-        Date finishTime = new Date();
+        Date before = new Date();
 
-        return finishTime.getTime() - startTime.getTime();
+        insert10000(list);
+
         // напишите тут ваш код
+        Date after = new Date();
+
+        long time = after.getTime() - before.getTime();
+        return time;
 
     }
 

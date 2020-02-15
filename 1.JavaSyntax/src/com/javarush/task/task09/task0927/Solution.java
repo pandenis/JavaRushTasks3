@@ -1,6 +1,9 @@
 package com.javarush.task.task09.task0927;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /* 
 Десять котов
@@ -15,31 +18,38 @@ public class Solution {
 
     public static Map<String, Cat> createMap() {
         //напишите тут ваш код
-        HashMap<String, Cat> catHashMap = new HashMap<>();
-        ArrayList<String> names = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            names.add("Name" + i);
-        }
+        Map<String, Cat> catMap = new HashMap<>();
 
-        for (int i = 0; i < names.size(); i++) {
-            String name = names.get(i);
-            catHashMap.put(name, new Cat(name));
-        }
+        Cat cat1 = new Cat("Cat1");
+        Cat cat2 = new Cat("Cat2");
+        Cat cat3 = new Cat("Cat3");
+        Cat cat4 = new Cat("Cat4");
+        Cat cat5 = new Cat("Cat5");
+        Cat cat6 = new Cat("Cat6");
+        Cat cat7 = new Cat("Cat7");
+        Cat cat8 = new Cat("Cat8");
+        Cat cat9 = new Cat("Cat9");
+        Cat cat10 = new Cat("Cat10");
 
-        return catHashMap;
+        catMap.put("Cat1", cat1);
+        catMap.put("Cat2", cat2);
+        catMap.put("Cat3", cat3);
+        catMap.put("Cat4", cat4);
+        catMap.put("Cat5", cat5);
+        catMap.put("Cat6", cat6);
+        catMap.put("Cat7", cat7);
+        catMap.put("Cat8", cat8);
+        catMap.put("Cat9", cat9);
+        catMap.put("Cat10", cat10);
+
+        return catMap;
     }
 
     public static Set<Cat> convertMapToSet(Map<String, Cat> map) {
         //напишите тут ваш код
-
-        Set<Cat> catSet = new HashSet<>(10);
-        Iterator iterator = map.entrySet().iterator();
-        while (iterator.hasNext()) {
-            Map.Entry pair = (Map.Entry)iterator.next();
-            catSet.add((Cat) pair.getValue());
-        }
-
-        return catSet;
+        Set<Cat> cats = new HashSet<Cat>(map.values());
+        return cats;
+        
     }
 
     public static void printCatSet(Set<Cat> set) {

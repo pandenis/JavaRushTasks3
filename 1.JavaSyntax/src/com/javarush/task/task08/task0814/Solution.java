@@ -12,28 +12,31 @@ import java.util.Set;
 public class Solution {
     public static Set<Integer> createSet() {
         // напишите тут ваш код
-        Set<Integer> integerSet = new HashSet<>(20);
+        Set<Integer> set = new HashSet<>();
+
         for (int i = 0; i < 20; i++) {
-            integerSet.add(i);
+            Integer number = i * 2;
+            set.add(number);
         }
-        return integerSet;
+
+        return set;
     }
 
     public static Set<Integer> removeAllNumbersGreaterThan10(Set<Integer> set) {
         // напишите тут ваш код
-        Iterator<Integer> integer = set.iterator();
+        Iterator<Integer> iterator = set.iterator();
 
-        while (integer.hasNext()) {
-            if (integer.next() > 10) {
-                integer.remove();
+        while (iterator.hasNext()) {
+            int number = iterator.next();
+            if (number > 10) {
+                iterator.remove();
             }
         }
 
         return set;
-
     }
 
     public static void main(String[] args) {
-        removeAllNumbersGreaterThan10(createSet());
+
     }
 }

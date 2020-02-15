@@ -1,7 +1,6 @@
 package com.javarush.task.task06.task0610;
 
 import java.io.BufferedReader;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /* 
@@ -13,7 +12,6 @@ public class ConsoleReader {
         //напишите тут ваш код
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         return reader.readLine();
-
     }
 
     public static int readInt() throws Exception {
@@ -27,13 +25,15 @@ public class ConsoleReader {
         //напишите тут ваш код
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         return Double.parseDouble(reader.readLine());
-
     }
 
     public static boolean readBoolean() throws Exception {
         //напишите тут ваш код
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        return Boolean.parseBoolean(reader.readLine());
+        if (reader.readLine().equals("true")) {
+            return true;
+        }    else
+            return false;
 
     }
 

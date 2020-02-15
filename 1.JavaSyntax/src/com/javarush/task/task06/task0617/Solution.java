@@ -9,14 +9,14 @@ public class Solution {
         printIdea(new Idea());
     }
 
-    //напишите тут ваш код
-    public static class Idea{
-        public String getDescription() {
-            return " ";
-        }
-    }
-
     public static void printIdea(Idea idea) {
         System.out.println(idea.getDescription());
+    }
+
+    //напишите тут ваш код
+    public static class Idea {
+        public String getDescription() {
+            return "222";
+        }
     }
 }
