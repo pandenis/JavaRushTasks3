@@ -3,6 +3,8 @@ package com.javarush.task.task09.task0930;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 /* 
 Задача по алгоритмам
@@ -45,6 +47,18 @@ public class Solution {
                 strings.add(array[i]);
             }
         }
+
+        for (int i = 0; i < strings.size() - 1; i++) {
+            String first = strings.get(i);
+            int j = i + 1;
+            String second = strings.get(j);
+
+            if (isGreaterThan(second, first));
+            strings.set(i, second);
+            strings.set(j, first);
+        }
+
+        Collections.sort(integers, Collections.reverseOrder());
 
 
     }
